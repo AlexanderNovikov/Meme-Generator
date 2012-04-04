@@ -18,7 +18,7 @@ public class MemeGenerator extends JPanel {
     private static final String IMAGE = "original.png";
     private static final String NEW_IMAGE = "meme.png";
     private static final String EXTENSION = "png";
-    private static final String STRING = "String";
+    private static final String STRING = "ABCDEFGE";
     private static final String FONT = "Serif";
     private static final int FONT_SIZE = 45;
     private static final int UPPER_LEFT_X = 5;
@@ -49,7 +49,10 @@ public class MemeGenerator extends JPanel {
         return bufferedImage;
     }
     private static Graphics2D putStringOntoImage(Graphics2D graphics2D, String text, int x, int y) {
-        graphics2D.drawString(text, x, y);
+        int width = -350;
+        int textLength = text.length();
+        System.out.print(textLength);
+        graphics2D.drawString(text, x - (width + (textLength*15)) / 2, y);
         return graphics2D;
     }
     private static void writeImage(RenderedImage image) {
